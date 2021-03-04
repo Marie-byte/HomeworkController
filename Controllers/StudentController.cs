@@ -23,14 +23,15 @@ namespace Homework.Controllers
         public async Task<ActionResult<IEnumerable<StudentDTO>>> GetStudents()
         {
             var student = from students in _context.Student
-            join studentdescription in _context.Studentdescription on students.id equals studentdescription.student_id
+            join studentdescription in _context.Studentdescription on students.id equals studentdescription.Students_id
             select new StudentDTO
             {
                 Students_Id = students.id,
-                Age = studentdescription.age,
-                First_name = studentdescription.first_name,
-                Last_name = studentdescription.last_name,
-                Country = studentdescription.country
+                Age = studentdescription.Age,
+                First_name = studentdescription.First_name,
+                Last_name = studentdescription.Last_name,
+                Address = studentdescription.Address,
+                Country = studentdescription.Country
             };
             return await student.ToListAsync();
         }
@@ -39,14 +40,15 @@ namespace Homework.Controllers
         public ActionResult<StudentDTO> GetStudentById(int id)
         {
             var student = from students in _context.Student
-            join studentdescription in _context.Studentdescription on students.id equals studentdescription.student_id
+            join studentdescription in _context.Studentdescription on students.id equals studentdescription.Students_id
             select new StudentDTO
             {
                 Students_Id = students.id,
-                Age = studentdescription.age,
-                First_name = studentdescription.first_name,
-                Last_name = studentdescription.last_name,
-                Country = studentdescription.country
+                Age = studentdescription.Age,
+                First_name = studentdescription.First_name,
+                Last_name = studentdescription.Last_name,
+                Address = studentdescription.Address,
+                Country = studentdescription.Country
             };
             var student_by_id = student.ToList().Find(x => x.Students_Id == id);
             if(student_by_id == null)

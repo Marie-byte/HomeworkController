@@ -5,12 +5,12 @@ namespace Homework.Models
     public class Studentdescription
     {
         [Key]
-        public int id{get;set;}
-        public int student_id{get;set;}
-        public int age{get;set;}
-        public string first_name{get;set;}
-        public string last_name{get;set;}
-        public string address{get;set;}
-        public string country{get;set;}
+        public int Id{get;set;}
+        public int Students_id{get;set;}
+        public int Age{get;set;}
+        public string First_name{get;set;}
+        public string Last_name{get;set;}
+        public string Address{get;set;}
+        public string Country{get;set;}
     }
 }
