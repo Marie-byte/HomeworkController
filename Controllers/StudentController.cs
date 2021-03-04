@@ -27,6 +27,7 @@ namespace Homework.Controllers
             select new StudentDTO
             {
                 Students_Id = students.id,
+                Grade = students.grade,
                 Age = studentdescription.Age,
                 First_name = studentdescription.First_name,
                 Last_name = studentdescription.Last_name,
